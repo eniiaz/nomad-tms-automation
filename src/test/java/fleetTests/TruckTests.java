@@ -29,10 +29,6 @@ public class TruckTests {
 
     @AfterEach
     public void cleanUp(){
-        System.out.println("Check for the test status");
-        System.out.println("Take a screenshot");
-        System.out.println("Complete the report etc");
-        System.out.println("Close the browser");
         driver.quit();
     }
 
