@@ -10,7 +10,7 @@ public class DriversPage {
     public DriversPage(){
         PageFactory.initElements(DriverUtil.getDriver(), this);
     }
-    
+
     @FindBy(xpath = "//button[.='Add Driver']")
     public WebElement addDriverButton;
 
