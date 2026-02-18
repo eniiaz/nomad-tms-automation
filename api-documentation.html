@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomad TMS API Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --bg-primary: #0f1419;
+      --bg-secondary: #1a1f2e;
+      --bg-card: #232b3b;
+      --accent-orange: #ff6b35;
+      --accent-blue: #4dabf7;
+      --accent-green: #51cf66;
+      --accent-yellow: #fcc419;
+      --accent-red: #ff6b6b;
+      --accent-purple: #cc5de8;
+      --text-primary: #e8eaed;
+      --text-secondary: #9aa0a6;
+      --border-color: #2d3748;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .logo {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    
+    header p {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+    
+    .badge-version {
+      background: var(--accent-blue);
+      color: var(--bg-primary);
+    }
+    
+    .section {
+      margin: 3rem 0;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-orange);
+      display: inline-block;
+    }
+    
+    .variables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    
+    .variable-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--border-color);
+    }
+    
+    .variable-card h4 {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+    }
+    
+    .variable-card code {
+      display: block;
+      background: var(--bg-secondary);
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent-green);
+      margin-top: 0.5rem;
+      word-break: break-all;
+    }
+    
+    .endpoints-group {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    
+    .group-header {
+      background: var(--bg-card);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .group-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    
+    .subgroup {
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .subgroup:last-child {
+      border-bottom: none;
+    }
+    
+    .subgroup-header {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      font-weight: 500;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .endpoint {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: background 0.2s;
+    }
+    
+    .endpoint:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .endpoint:last-child {
+      border-bottom: none;
+    }
+    
+    .method {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      min-width: 60px;
+      text-align: center;
+    }
+    
+    .method-get { background: rgba(81, 207, 102, 0.2); color: var(--accent-green); }
+    .method-post { background: rgba(77, 171, 247, 0.2); color: var(--accent-blue); }
+    .method-put { background: rgba(252, 196, 25, 0.2); color: var(--accent-yellow); }
+    .method-delete { background: rgba(255, 107, 107, 0.2); color: var(--accent-red); }
+    
+    .endpoint-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+    
+    .endpoint-name {
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+    
+    .quick-start {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+    }
+    
+    .quick-start ol {
+      margin-left: 1.5rem;
+    }
+    
+    .quick-start li {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    .quick-start li strong {
+      color: var(--text-primary);
+    }
+    
+    .quick-start code {
+      background: var(--bg-secondary);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent-orange);
+    }
+    
+    .stats {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+    }
+    
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      margin-top: 4rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      header {
+        padding: 2rem 1rem;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .endpoint {
+        flex-wrap: wrap;
+      }
+      
+      .endpoint-path {
+        width: 100%;
+        order: 3;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🚛 Nomad TMS API</div>
+    <p>Complete REST API collection for Transportation Management System. All entity-based CRUD operations organized by functional area.</p>
+    <span class="badge badge-version">v1.0.0</span>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">70+</div>
+        <div class="stat-label">API Endpoints</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">7</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">14</div>
+        <div class="stat-label">Entities</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Quick Start -->
+    <section class="section">
+      <h2 class="section-title">🚀 Quick Start</h2>
+      <div class="quick-start">
+        <ol>
+          <li>
+            <strong>Import the Collection:</strong> Import <code>postman-collection-updated.json</code> into Postman
+          </li>
+          <li>
+            <strong>Set Supabase URL:</strong> Update the <code>supabase_url</code> variable with your Supabase project URL (e.g., <code>https://xxxxx.supabase.co</code>)
+          </li>
+          <li>
+            <strong>Set Anon Key:</strong> Update the <code>supabase_anon_key</code> variable from your Supabase project settings → API
+          </li>
+          <li>
+            <strong>Sign In:</strong> Run the <code>Sign In</code> request with your credentials. The JWT token will be auto-saved!
+          </li>
+          <li>
+            <strong>Start Testing:</strong> All other endpoints will now use your JWT token automatically
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Collection Variables -->
+    <section class="section">
+      <h2 class="section-title">⚙️ Collection Variables</h2>
+      <div class="variables-grid">
+        <div class="variable-card">
+          <h4>{{base_url}}</h4>
+          <p>Base URL for the API server</p>
+          <code>http://localhost:5000</code>
+        </div>
+        <div class="variable-card">
+          <h4>{{supabase_url}}</h4>
+          <p>Your Supabase project URL</p>
+          <code>https://your-project-ref.supabase.co</code>
+        </div>
+        <div class="variable-card">
+          <h4>{{supabase_anon_key}}</h4>
+          <p>Supabase anonymous/public key</p>
+          <code>eyJhbGciOi... (from project settings)</code>
+        </div>
+        <div class="variable-card">
+          <h4>{{jwt_token}}</h4>
+          <p>JWT Bearer token (auto-filled on Sign In)</p>
+          <code>Auto-populated after authentication</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Endpoints -->
+    <section class="section">
+      <h2 class="section-title">📚 API Endpoints</h2>
+
+      <!-- Authentication -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(77, 171, 247, 0.2);">🔐</div>
+          Authentication
+        </div>
+        <div class="endpoint">
+          <span class="method method-post">POST</span>
+          <span class="endpoint-name">Sign In</span>
+          <span class="endpoint-path">{{supabase_url}}/auth/v1/token?grant_type=password</span>
+        </div>
+        <div class="endpoint">
+          <span class="method method-post">POST</span>
+          <span class="endpoint-name">Sign Up</span>
+          <span class="endpoint-path">{{supabase_url}}/auth/v1/signup</span>
+        </div>
+        <div class="endpoint">
+          <span class="method method-get">GET</span>
+          <span class="endpoint-name">Get Session</span>
+          <span class="endpoint-path">{{supabase_url}}/auth/v1/user</span>
+        </div>
+      </div>
+
+      <!-- Core Entities -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(255, 107, 53, 0.2);">🏢</div>
+          Core Entities
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Companies</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Companies</span>
+            <span class="endpoint-path">/api/companies</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Company by ID</span>
+            <span class="endpoint-path">/api/companies/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Company</span>
+            <span class="endpoint-path">/api/companies</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Company</span>
+            <span class="endpoint-path">/api/companies/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Company</span>
+            <span class="endpoint-path">/api/companies/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Users</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Users</span>
+            <span class="endpoint-path">/api/users</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get User by ID</span>
+            <span class="endpoint-path">/api/users/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create User</span>
+            <span class="endpoint-path">/api/users</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update User</span>
+            <span class="endpoint-path">/api/users/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete User</span>
+            <span class="endpoint-path">/api/users/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleet Management -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(81, 207, 102, 0.2);">🚛</div>
+          Fleet Management
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Trucks</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Trucks</span>
+            <span class="endpoint-path">/api/trucks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Truck by ID</span>
+            <span class="endpoint-path">/api/trucks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Truck</span>
+            <span class="endpoint-path">/api/trucks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Truck</span>
+            <span class="endpoint-path">/api/trucks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Truck</span>
+            <span class="endpoint-path">/api/trucks/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Trailers</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Trailers</span>
+            <span class="endpoint-path">/api/trailers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Trailer by ID</span>
+            <span class="endpoint-path">/api/trailers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Trailer</span>
+            <span class="endpoint-path">/api/trailers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Trailer</span>
+            <span class="endpoint-path">/api/trailers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Trailer</span>
+            <span class="endpoint-path">/api/trailers/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Drivers</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Drivers</span>
+            <span class="endpoint-path">/api/drivers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Driver by ID</span>
+            <span class="endpoint-path">/api/drivers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Driver</span>
+            <span class="endpoint-path">/api/drivers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Driver</span>
+            <span class="endpoint-path">/api/drivers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Driver</span>
+            <span class="endpoint-path">/api/drivers/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Driver Documents</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Driver Documents</span>
+            <span class="endpoint-path">/api/driver_documents</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Driver Document by ID</span>
+            <span class="endpoint-path">/api/driver_documents/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Driver Document</span>
+            <span class="endpoint-path">/api/driver_documents</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Driver Document</span>
+            <span class="endpoint-path">/api/driver_documents/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Driver Document</span>
+            <span class="endpoint-path">/api/driver_documents/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Partners -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(204, 93, 232, 0.2);">🤝</div>
+          Business Partners
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Customers</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Customers</span>
+            <span class="endpoint-path">/api/customers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Customer by ID</span>
+            <span class="endpoint-path">/api/customers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Customer</span>
+            <span class="endpoint-path">/api/customers</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Customer</span>
+            <span class="endpoint-path">/api/customers/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Customer</span>
+            <span class="endpoint-path">/api/customers/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Vendors</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Vendors</span>
+            <span class="endpoint-path">/api/vendors</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Vendor by ID</span>
+            <span class="endpoint-path">/api/vendors/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Vendor</span>
+            <span class="endpoint-path">/api/vendors</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Vendor</span>
+            <span class="endpoint-path">/api/vendors/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Vendor</span>
+            <span class="endpoint-path">/api/vendors/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Locations</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Locations</span>
+            <span class="endpoint-path">/api/locations</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Location by ID</span>
+            <span class="endpoint-path">/api/locations/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Location</span>
+            <span class="endpoint-path">/api/locations</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Location</span>
+            <span class="endpoint-path">/api/locations/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Location</span>
+            <span class="endpoint-path">/api/locations/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operations -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(252, 196, 25, 0.2);">📦</div>
+          Operations
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Loads</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Loads</span>
+            <span class="endpoint-path">/api/loads</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Load by ID</span>
+            <span class="endpoint-path">/api/loads/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Load</span>
+            <span class="endpoint-path">/api/loads</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Load</span>
+            <span class="endpoint-path">/api/loads/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Load</span>
+            <span class="endpoint-path">/api/loads/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accounting -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(81, 207, 102, 0.2);">💰</div>
+          Accounting
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Invoices</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Invoices</span>
+            <span class="endpoint-path">/api/invoices</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Invoice by ID</span>
+            <span class="endpoint-path">/api/invoices/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Invoice</span>
+            <span class="endpoint-path">/api/invoices</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Invoice</span>
+            <span class="endpoint-path">/api/invoices/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Invoice</span>
+            <span class="endpoint-path">/api/invoices/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Invoice Batches</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Invoice Batches</span>
+            <span class="endpoint-path">/api/invoice_batches</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Invoice Batch by ID</span>
+            <span class="endpoint-path">/api/invoice_batches/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Invoice Batch</span>
+            <span class="endpoint-path">/api/invoice_batches</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Invoice Batch</span>
+            <span class="endpoint-path">/api/invoice_batches/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Invoice Batch</span>
+            <span class="endpoint-path">/api/invoice_batches/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Bills</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Bills</span>
+            <span class="endpoint-path">/api/bills</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Bill by ID</span>
+            <span class="endpoint-path">/api/bills/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Bill</span>
+            <span class="endpoint-path">/api/bills</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Bill</span>
+            <span class="endpoint-path">/api/bills/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Bill</span>
+            <span class="endpoint-path">/api/bills/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Salaries</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Salaries</span>
+            <span class="endpoint-path">/api/salaries</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Salary by ID</span>
+            <span class="endpoint-path">/api/salaries/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Salary</span>
+            <span class="endpoint-path">/api/salaries</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Salary</span>
+            <span class="endpoint-path">/api/salaries/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Salary</span>
+            <span class="endpoint-path">/api/salaries/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(255, 107, 107, 0.2);">🔧</div>
+          Maintenance
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Work Orders</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Work Orders</span>
+            <span class="endpoint-path">/api/work-orders</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Work Order by ID</span>
+            <span class="endpoint-path">/api/work-orders/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Work Order</span>
+            <span class="endpoint-path">/api/work-orders</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Work Order</span>
+            <span class="endpoint-path">/api/work-orders/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Work Order</span>
+            <span class="endpoint-path">/api/work-orders/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Work Order Tasks</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Work Order Tasks</span>
+            <span class="endpoint-path">/api/work_order_tasks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Work Order Task by ID</span>
+            <span class="endpoint-path">/api/work_order_tasks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Work Order Task</span>
+            <span class="endpoint-path">/api/work_order_tasks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Work Order Task</span>
+            <span class="endpoint-path">/api/work_order_tasks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Work Order Task</span>
+            <span class="endpoint-path">/api/work_order_tasks/:id</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety -->
+      <div class="endpoints-group">
+        <div class="group-header">
+          <div class="group-icon" style="background: rgba(77, 171, 247, 0.2);">🛡️</div>
+          Safety
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Safety Incidents</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Safety Incidents</span>
+            <span class="endpoint-path">/api/safety_incidents</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Safety Incident by ID</span>
+            <span class="endpoint-path">/api/safety_incidents/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Safety Incident</span>
+            <span class="endpoint-path">/api/safety_incidents</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Safety Incident</span>
+            <span class="endpoint-path">/api/safety_incidents/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Safety Incident</span>
+            <span class="endpoint-path">/api/safety_incidents/:id</span>
+          </div>
+        </div>
+        <div class="subgroup">
+          <div class="subgroup-header">Safety Tasks</div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get All Safety Tasks</span>
+            <span class="endpoint-path">/api/safety_tasks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-get">GET</span>
+            <span class="endpoint-name">Get Safety Task by ID</span>
+            <span class="endpoint-path">/api/safety_tasks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-post">POST</span>
+            <span class="endpoint-name">Create Safety Task</span>
+            <span class="endpoint-path">/api/safety_tasks</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-put">PUT</span>
+            <span class="endpoint-name">Update Safety Task</span>
+            <span class="endpoint-path">/api/safety_tasks/:id</span>
+          </div>
+          <div class="endpoint">
+            <span class="method method-delete">DELETE</span>
+            <span class="endpoint-name">Delete Safety Task</span>
+            <span class="endpoint-path">/api/safety_tasks/:id</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Nomad TMS API Documentation • Built with ❤️ for Fleet Management</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Last updated: January 2026</p>
+  </footer>
+</body>
+</html>

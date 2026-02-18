@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import utilities.DriverUtil;
 
 public class TruckTests {
 
@@ -25,6 +26,15 @@ public class TruckTests {
 
         Assertions.assertTrue(plateNum1.startsWith("IL") && plateNum1.length() == 7);
         Assertions.assertTrue(vinNum1.length() == 16);
+
+    }
+
+    @Test
+    public void truckTEst(){
+
+        DriverUtil.getDriver().get("our app");
+        // do something
+    
 
     }
 
