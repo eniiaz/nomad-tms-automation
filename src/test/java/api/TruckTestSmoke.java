@@ -30,6 +30,7 @@ public class TruckTestSmoke {
 
         System.out.println("Status: " + response.statusCode());
         String responseJSON = response.asString();
+
         ObjectMapper objectMapper = new ObjectMapper();
 
         Truck responsePOJO = objectMapper.readValue(responseJSON, Truck.class);
@@ -37,9 +38,7 @@ public class TruckTestSmoke {
         System.out.println("Name: " + responsePOJO.name);
         System.out.println("Year: " + responsePOJO.year);
         System.out.println("State: " + responsePOJO.state);
-
     }
-
 
     @Test
     public void getTrucksList() throws JsonProcessingException {
