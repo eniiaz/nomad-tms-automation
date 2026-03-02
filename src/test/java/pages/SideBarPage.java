@@ -29,12 +29,39 @@ public class SideBarPage {
     @FindBy(xpath = "//button[.='Drivers']")
     public WebElement driversMenu;
 
+    @FindBy(xpath = "//button[.='Trailers']")
+    public WebElement trailersMenu;
+
     @FindBy(xpath = "//button[.='Accounting']")
     public WebElement accountingMenu;
 
     @FindBy(xpath = "//button[.='Invoices']")
     public WebElement invoicesMenu;
 
+    @FindBy(xpath = "//button[.='System']")
+    public WebElement systemMenu;
+
+    @FindBy(xpath = "//button[.='Settings']")
+    public WebElement settingsMenu;
+
+
+    public void navigateMenu(String menuOption){
+
+        if (menuOption.trim().equalsIgnoreCase("trucks")){
+            fleetManagementMenu.click();
+            trucksMenu.click();
+        }else if(menuOption.trim().equalsIgnoreCase("trailers")){
+            fleetManagementMenu.click();
+            trailersMenu.click();
+        }else if(menuOption.trim().equalsIgnoreCase("settings")){
+            systemMenu.click();
+            settingsMenu.click();
+        }else if(menuOption.trim().equalsIgnoreCase("customers")){
+            businessMenu.click();
+            customersMenu.click();
+        }
+
+    }
 
 
 }

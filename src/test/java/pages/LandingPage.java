@@ -23,7 +23,6 @@ public class LandingPage {
     @FindBy(xpath = "//form//button[text()='Sign In']")
     public WebElement signInButton;
 
-
     public void login(String email, String password){
         loginBtn.click();
         signInEmailInputBox.sendKeys(email);
