@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.DriverUtil;
 
+import java.util.List;
+
 public class SettingsPage {
 
     public SettingsPage(){
@@ -16,6 +18,9 @@ public class SettingsPage {
 
     @FindBy(xpath = "//label[.='Company Name *']/../input")
     public WebElement companyNameInput;
+
+    @FindBy(xpath = "(//span[.='MC Number:']/../../..)//h3")
+    public List<WebElement> companyNamesList;
 
     public void createCompany(String companyName, String dotNumber, String mcNumber, String email, String phone, String taxId){
         addCompanyBtn.click();
