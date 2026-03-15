@@ -18,7 +18,7 @@ public class CustomersSteps {
     public void user_launches_the_application() {
         DriverUtil.getDriver().get(ConfigUtil.getValue("appURL"));
         // Logging saying "user is opening the website"
-        MyLogger.info("User lauched the web application");
+        MyLogger.info("User launched the web application");
     }
 
     @Then("user logs in to the application using admin credentials")

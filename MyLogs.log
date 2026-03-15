@@ -3,3 +3,8 @@
 2026-03-12 20:20:00,298 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
 2026-03-12 20:20:02,507 [main] ERROR utilities.MyLogger - Customer search functionality validation failed please check reports for screenshot
 2026-03-12 20:20:02,589 [main] INFO  utilities.MyLogger - Customer search functionality validation is completed
+2026-03-14 19:18:40,665 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-14 19:18:42,378 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-14 19:18:42,598 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-14 19:18:44,969 [main] ERROR utilities.MyLogger - Customer search functionality validation failed please check reports for screenshot
+2026-03-14 19:18:45,060 [main] INFO  utilities.MyLogger - Customer search functionality validation is completed
