@@ -8,3 +8,38 @@
 2026-03-14 19:18:42,598 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
 2026-03-14 19:18:44,969 [main] ERROR utilities.MyLogger - Customer search functionality validation failed please check reports for screenshot
 2026-03-14 19:18:45,060 [main] INFO  utilities.MyLogger - Customer search functionality validation is completed
+2026-03-15 20:57:06,598 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-15 20:57:07,731 [main] INFO  utilities.MyLogger - Company creation for API testing is completed
+2026-03-15 20:57:07,732 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-15 20:57:08,098 [main] INFO  utilities.MyLogger - Company creation for API testing is completed
+2026-03-15 20:57:08,100 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-15 20:57:08,498 [main] INFO  utilities.MyLogger - Company creation for API testing is completed
+2026-03-15 20:57:08,501 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-15 20:57:08,725 [main] INFO  utilities.MyLogger - Company creation for API testing is completed
+2026-03-15 20:57:08,749 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-15 20:57:10,587 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-15 20:57:10,788 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-15 20:57:11,347 [main] INFO  utilities.MyLogger - Customer creation is completed
+2026-03-26 20:40:54,410 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-26 20:40:56,489 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-26 20:40:56,706 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-26 20:40:57,224 [main] INFO  utilities.MyLogger - Navigated to Trailers page
+2026-03-26 20:40:57,731 [main] INFO  utilities.MyLogger - Clicked on Add Trailer button
+2026-03-26 20:41:09,944 [main] ERROR utilities.MyLogger - Trailer creation and validation failed please check reports for screenshot
+2026-03-26 20:41:10,035 [main] INFO  utilities.MyLogger - Trailer creation and validation is completed
+2026-03-26 20:45:57,182 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-26 20:45:58,890 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-26 20:45:59,101 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-26 20:45:59,582 [main] INFO  utilities.MyLogger - Navigated to Trailers page
+2026-03-26 20:46:00,276 [main] INFO  utilities.MyLogger - Clicked on Add Trailer button
+2026-03-26 20:46:13,063 [main] ERROR utilities.MyLogger - Trailer creation and validation failed please check reports for screenshot
+2026-03-26 20:46:13,155 [main] INFO  utilities.MyLogger - Trailer creation and validation is completed
+2026-03-26 20:49:23,045 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-26 20:49:24,271 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-26 20:49:24,487 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-26 20:49:24,911 [main] INFO  utilities.MyLogger - Navigated to Trailers page
+2026-03-26 20:49:25,482 [main] INFO  utilities.MyLogger - Clicked on Add Trailer button
+2026-03-26 20:49:26,305 [main] INFO  utilities.MyLogger - Filled trailer details - Make: Great Dane, Type: Dry Van, VIN: 1GRAA06211234ABCD, Unit: TR-5001
+2026-03-26 20:49:28,339 [main] INFO  utilities.MyLogger - Saved the trailer and redirected to trailers list
+2026-03-26 20:49:30,433 [main] INFO  utilities.MyLogger - Trailer validated - Unit: TR-5001, Type: Dry Van, VIN: 1GRAA06211234ABCD
+2026-03-26 20:49:30,524 [main] INFO  utilities.MyLogger - Trailer creation and validation is completed

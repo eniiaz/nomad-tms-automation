@@ -19,6 +19,7 @@ public class CustomersPage {
     @FindBy(xpath = "//table/tbody//tr/td[1]/div/div[1]")
     public List<WebElement> customerResultNames;
 
+    
 
 
 }
