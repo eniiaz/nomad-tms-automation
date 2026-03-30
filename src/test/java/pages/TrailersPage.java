@@ -49,6 +49,29 @@ public class TrailersPage {
     @FindBy(xpath = "//table/tbody/tr/td[5]")
     public List<WebElement> trailerResultVins;
 
+    @FindBy(xpath = "//table/tbody/tr")
+    public List<WebElement> trailerRows;
+
+    @FindBy(xpath = "//button[normalize-space()='Delete']")
+    public WebElement deleteBtn;
+
+    public void clickTrailerByUnitNumber(String unitNumber) {
+        for (int i = 0; i < trailerResultUnitNumbers.size(); i++) {
+            if (trailerResultUnitNumbers.get(i).getText().trim().equals(unitNumber)) {
+                trailerResultUnitNumbers.get(i).click();
+                return;
+            }
+        }
+        throw new RuntimeException("Trailer with unit number " + unitNumber + " not found in the table");
+    }
+
+    public void confirmDeletion() {
+        WebDriverWait wait = new WebDriverWait(DriverUtil.getDriver(), Duration.ofSeconds(5));
+        WebElement confirmBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@role='alertdialog']//button[normalize-space()='Continue' or normalize-space()='Delete' or normalize-space()='Confirm']")));
+        confirmBtn.click();
+    }
+
     public void selectType(String type) {
         typeDropdown.click();
         WebDriverWait wait = new WebDriverWait(DriverUtil.getDriver(), Duration.ofSeconds(5));

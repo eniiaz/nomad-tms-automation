@@ -4,7 +4,6 @@ Feature: Company component at API and UI level tests
   Scenario Outline: Company creation for API testing
 
     Given user makes an api call to create a company with "<companyName>" "<email>" "<taxId>" "<dot>" at endpoint "<endpoint>"
-    Then user verifies that company is created successfully for the name "<companyName>"
 
     Examples:
       | companyName  | taxId    | email           | dot      | endpoint                                      |

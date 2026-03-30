@@ -25,6 +25,6 @@ public class GenericRequestBody {
     public String make;
     public String type;
     public String ownership;
-
+    public String fleet_status;
 
 }

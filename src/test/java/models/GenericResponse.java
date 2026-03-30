@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GenericResponse {
 
+    public String id;
     public String status;
     public String assignment_status;
     public int odometer;
@@ -25,4 +26,5 @@ public class GenericResponse {
     public String make;
     public String type;
     public String ownership;
+    public String fleet_status;
 }

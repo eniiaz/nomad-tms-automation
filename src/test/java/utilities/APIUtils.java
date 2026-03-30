@@ -11,20 +11,27 @@ public class APIUtils {
 
     private static GenericResponse genericResponse;
     private static GenericResponse [] genericResponseList;
+    private static int lastStatusCode;
 
     public static void POST(GenericRequestBody body, String url)  {
         Response response = RestAssured.given().header("authorization", ConfigUtil.getValue("apiToken")).header("content-type", "application/json").
                 body(body).when().post(url);
+        lastStatusCode = response.statusCode();
         System.out.println("Status: " + response.statusCode());
         String responseJSON = response.asString();
         ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            genericResponse = objectMapper.readValue(responseJSON, GenericResponse.class);
-        } catch (JsonProcessingException e) {
-            System.out.println("Object Mapper couldn't Map the JSON into your GenericResponse type");
-            throw new RuntimeException(e);
-        }
 
+        if (lastStatusCode >= 200 && lastStatusCode < 300) {
+            try {
+                genericResponse = objectMapper.readValue(responseJSON, GenericResponse.class);
+            } catch (JsonProcessingException e) {
+                System.out.println("Object Mapper couldn't Map the JSON into your GenericResponse type");
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("Non-success response body: " + responseJSON);
+            genericResponse = null;
+        }
     }
 
     public static GenericResponse getGenericResponse(){
@@ -46,9 +53,13 @@ public class APIUtils {
         }
     }
 
+    public static int getLastStatusCode(){
+        return lastStatusCode;
+    }
 
     public static void GET(String url){
         Response response = RestAssured.given().header("authorization", ConfigUtil.getValue("apiToken")).header("content-type", "application/json").get(url);
+        lastStatusCode = response.statusCode();
         System.out.println("Status: " + response.statusCode());
         String responseJSON = response.asString();
 
@@ -64,6 +75,14 @@ public class APIUtils {
         }
     }
 
-
+    public static void DELETE(String url){
+        Response response = RestAssured.given()
+                .header("authorization", ConfigUtil.getValue("apiToken"))
+                .header("content-type", "application/json")
+                .when().delete(url);
+        lastStatusCode = response.statusCode();
+        System.out.println("DELETE Status: " + response.statusCode());
+        System.out.println("DELETE Response: " + response.asString());
+    }
 
 }

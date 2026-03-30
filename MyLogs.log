@@ -43,3 +43,211 @@
 2026-03-26 20:49:28,339 [main] INFO  utilities.MyLogger - Saved the trailer and redirected to trailers list
 2026-03-26 20:49:30,433 [main] INFO  utilities.MyLogger - Trailer validated - Unit: TR-5001, Type: Dry Van, VIN: 1GRAA06211234ABCD
 2026-03-26 20:49:30,524 [main] INFO  utilities.MyLogger - Trailer creation and validation is completed
+2026-03-28 19:42:00,612 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:00,624 [main] INFO  utilities.MyLogger - Creating truck: Freightliner | Cascadia | UN-3001-556382
+2026-03-28 19:42:01,572 [main] INFO  utilities.MyLogger - Truck created with ID: 9fa93d8b-1821-40f1-9438-1c841aa9db34
+2026-03-28 19:42:01,574 [main] INFO  utilities.MyLogger - Verified truck created: Freightliner with ID: 9fa93d8b-1821-40f1-9438-1c841aa9db34
+2026-03-28 19:42:01,921 [main] INFO  utilities.MyLogger - Found created truck in list: Freightliner (ID: 9fa93d8b-1821-40f1-9438-1c841aa9db34)
+2026-03-28 19:42:01,923 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:42:01,925 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:01,927 [main] INFO  utilities.MyLogger - Creating truck: Peterbilt | 579 | UN-3002-169255
+2026-03-28 19:42:02,363 [main] INFO  utilities.MyLogger - Truck created with ID: 016818f4-ea74-4cfd-88fb-d0a1217024dd
+2026-03-28 19:42:02,364 [main] INFO  utilities.MyLogger - Verified truck created: Peterbilt with ID: 016818f4-ea74-4cfd-88fb-d0a1217024dd
+2026-03-28 19:42:02,754 [main] INFO  utilities.MyLogger - Found created truck in list: Peterbilt (ID: 016818f4-ea74-4cfd-88fb-d0a1217024dd)
+2026-03-28 19:42:02,754 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:42:02,756 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:02,756 [main] INFO  utilities.MyLogger - Creating truck: Kenworth | T680 | UN-3003-337794
+2026-03-28 19:42:03,201 [main] INFO  utilities.MyLogger - Truck created with ID: 4ee9c224-dda7-41a9-9ed6-fcc449b72926
+2026-03-28 19:42:03,202 [main] INFO  utilities.MyLogger - Verified truck created: Kenworth with ID: 4ee9c224-dda7-41a9-9ed6-fcc449b72926
+2026-03-28 19:42:03,540 [main] INFO  utilities.MyLogger - Found created truck in list: Kenworth (ID: 4ee9c224-dda7-41a9-9ed6-fcc449b72926)
+2026-03-28 19:42:03,540 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:42:03,543 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:03,544 [main] INFO  utilities.MyLogger - Creating truck: Volvo | VNL860 | UN-3004-376245
+2026-03-28 19:42:03,968 [main] INFO  utilities.MyLogger - Truck created with ID: 81485200-97fd-4b17-9d82-c1bf9528007d
+2026-03-28 19:42:03,968 [main] INFO  utilities.MyLogger - Verified truck created: Volvo with ID: 81485200-97fd-4b17-9d82-c1bf9528007d
+2026-03-28 19:42:04,312 [main] INFO  utilities.MyLogger - Found created truck in list: Volvo (ID: 81485200-97fd-4b17-9d82-c1bf9528007d)
+2026-03-28 19:42:04,312 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:42:04,314 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:04,315 [main] INFO  utilities.MyLogger - Creating truck: International | LT625 | UN-3005-869047
+2026-03-28 19:42:04,736 [main] INFO  utilities.MyLogger - Truck created with ID: 7aa6c09b-ca08-4ec6-abdb-a854f7cd8d19
+2026-03-28 19:42:04,738 [main] INFO  utilities.MyLogger - Verified truck created: International with ID: 7aa6c09b-ca08-4ec6-abdb-a854f7cd8d19
+2026-03-28 19:42:05,079 [main] INFO  utilities.MyLogger - Found created truck in list: International (ID: 7aa6c09b-ca08-4ec6-abdb-a854f7cd8d19)
+2026-03-28 19:42:05,080 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:42:05,083 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:05,083 [main] INFO  utilities.MyLogger - Creating truck: MackDel | Anthem | UN-4001-632993
+2026-03-28 19:42:05,512 [main] INFO  utilities.MyLogger - Truck created with ID: 75aa094f-318b-49b3-a54d-ba89567e1b2a
+2026-03-28 19:42:05,512 [main] INFO  utilities.MyLogger - Verified truck created: MackDel with ID: 75aa094f-318b-49b3-a54d-ba89567e1b2a
+2026-03-28 19:42:05,512 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/75aa094f-318b-49b3-a54d-ba89567e1b2a
+2026-03-28 19:42:06,648 [main] ERROR utilities.MyLogger - Create a truck then delete it and verify removal failed please check reports for screenshot
+2026-03-28 19:42:06,733 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:42:06,738 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:06,739 [main] INFO  utilities.MyLogger - Creating truck: IntlDel | LT | UN-4002-527145
+2026-03-28 19:42:07,168 [main] INFO  utilities.MyLogger - Truck created with ID: 19096f37-8dda-4f4e-a35d-bfa74e37519f
+2026-03-28 19:42:07,169 [main] INFO  utilities.MyLogger - Verified truck created: IntlDel with ID: 19096f37-8dda-4f4e-a35d-bfa74e37519f
+2026-03-28 19:42:07,169 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/19096f37-8dda-4f4e-a35d-bfa74e37519f
+2026-03-28 19:42:08,071 [main] ERROR utilities.MyLogger - Create a truck then delete it and verify removal failed please check reports for screenshot
+2026-03-28 19:42:08,152 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:42:08,153 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:08,153 [main] INFO  utilities.MyLogger - Creating truck: WesternSt | 5700XE | UN-4003-163804
+2026-03-28 19:42:08,596 [main] INFO  utilities.MyLogger - Truck created with ID: e8acd8af-62aa-400f-b73d-79b394f723b2
+2026-03-28 19:42:08,597 [main] INFO  utilities.MyLogger - Verified truck created: WesternSt with ID: e8acd8af-62aa-400f-b73d-79b394f723b2
+2026-03-28 19:42:08,597 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/e8acd8af-62aa-400f-b73d-79b394f723b2
+2026-03-28 19:42:09,555 [main] ERROR utilities.MyLogger - Create a truck then delete it and verify removal failed please check reports for screenshot
+2026-03-28 19:42:09,641 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:42:09,642 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:09,642 [main] INFO  utilities.MyLogger - Creating truck: HinoDel | L7 | UN-4004-903910
+2026-03-28 19:42:10,088 [main] INFO  utilities.MyLogger - Truck created with ID: 49a77e35-b3c7-46cc-a45d-5eacc54d9205
+2026-03-28 19:42:10,089 [main] INFO  utilities.MyLogger - Verified truck created: HinoDel with ID: 49a77e35-b3c7-46cc-a45d-5eacc54d9205
+2026-03-28 19:42:10,090 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/49a77e35-b3c7-46cc-a45d-5eacc54d9205
+2026-03-28 19:42:11,030 [main] ERROR utilities.MyLogger - Create a truck then delete it and verify removal failed please check reports for screenshot
+2026-03-28 19:42:11,114 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:42:11,115 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:11,115 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/00000000-0000-0000-0000-000000000000
+2026-03-28 19:42:11,337 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:42:11,337 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:42:11,338 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:11,338 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/invalid-id-format-not-uuid
+2026-03-28 19:42:11,486 [main] INFO  utilities.MyLogger - Verified status code 500 is not 200
+2026-03-28 19:42:11,486 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:42:11,486 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:11,487 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/99999999-aaaa-bbbb-cccc-dddddddddddd
+2026-03-28 19:42:11,976 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:42:11,977 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:42:11,977 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:11,978 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb
+2026-03-28 19:42:12,216 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:42:12,216 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:42:12,217 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:12,218 [main] INFO  utilities.MyLogger - Creating truck:  | X15 | UN-5001-768012
+2026-03-28 19:42:12,657 [main] INFO  utilities.MyLogger - Truck created with ID: 227ebe98-39ab-4e6d-a9fb-413dfa27c6e8
+2026-03-28 19:42:13,373 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:42:13,454 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:42:13,455 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:13,455 [main] INFO  utilities.MyLogger - Creating truck: Test |  | 
+2026-03-28 19:42:13,895 [main] INFO  utilities.MyLogger - Truck created with ID: 46249747-e369-4083-964f-7b4cbd03dd96
+2026-03-28 19:42:14,575 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:42:14,655 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:42:14,656 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:14,656 [main] INFO  utilities.MyLogger - Creating truck:  |  | 
+2026-03-28 19:42:15,090 [main] INFO  utilities.MyLogger - Truck created with ID: 1ec381cb-1994-42cb-a2b8-38de8e78e50b
+2026-03-28 19:42:15,781 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:42:15,863 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:42:15,864 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:42:15,864 [main] INFO  utilities.MyLogger - Creating truck: Solo |  | UN-5004-970068
+2026-03-28 19:42:16,303 [main] INFO  utilities.MyLogger - Truck created with ID: 080b164e-7cd1-4bf2-97ad-e20ac43c5799
+2026-03-28 19:42:17,000 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:42:17,083 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:57:15,921 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:15,931 [main] INFO  utilities.MyLogger - Creating truck: Freightliner | Cascadia | UN-3001-546393
+2026-03-28 19:57:17,308 [main] INFO  utilities.MyLogger - Truck created with ID: 7befabb0-41e0-4e0c-bea9-b80b0041ae75
+2026-03-28 19:57:17,309 [main] INFO  utilities.MyLogger - Verified truck created: Freightliner with ID: 7befabb0-41e0-4e0c-bea9-b80b0041ae75
+2026-03-28 19:57:17,884 [main] INFO  utilities.MyLogger - Found created truck in list: Freightliner (ID: 7befabb0-41e0-4e0c-bea9-b80b0041ae75)
+2026-03-28 19:57:17,886 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:57:17,888 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:17,889 [main] INFO  utilities.MyLogger - Creating truck: Peterbilt | 579 | UN-3002-782657
+2026-03-28 19:57:18,504 [main] INFO  utilities.MyLogger - Truck created with ID: 1669e13e-4293-42a2-81e1-df62fbb80c71
+2026-03-28 19:57:18,505 [main] INFO  utilities.MyLogger - Verified truck created: Peterbilt with ID: 1669e13e-4293-42a2-81e1-df62fbb80c71
+2026-03-28 19:57:18,861 [main] INFO  utilities.MyLogger - Found created truck in list: Peterbilt (ID: 1669e13e-4293-42a2-81e1-df62fbb80c71)
+2026-03-28 19:57:18,862 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:57:18,864 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:18,865 [main] INFO  utilities.MyLogger - Creating truck: Kenworth | T680 | UN-3003-357354
+2026-03-28 19:57:19,349 [main] INFO  utilities.MyLogger - Truck created with ID: 9d9f5491-5ead-48af-b859-81769bf63427
+2026-03-28 19:57:19,351 [main] INFO  utilities.MyLogger - Verified truck created: Kenworth with ID: 9d9f5491-5ead-48af-b859-81769bf63427
+2026-03-28 19:57:19,735 [main] INFO  utilities.MyLogger - Found created truck in list: Kenworth (ID: 9d9f5491-5ead-48af-b859-81769bf63427)
+2026-03-28 19:57:19,736 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:57:19,739 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:19,740 [main] INFO  utilities.MyLogger - Creating truck: Volvo | VNL860 | UN-3004-704271
+2026-03-28 19:57:20,232 [main] INFO  utilities.MyLogger - Truck created with ID: a56fac5c-f851-411c-bc75-6b260fd43640
+2026-03-28 19:57:20,233 [main] INFO  utilities.MyLogger - Verified truck created: Volvo with ID: a56fac5c-f851-411c-bc75-6b260fd43640
+2026-03-28 19:57:20,573 [main] INFO  utilities.MyLogger - Found created truck in list: Volvo (ID: a56fac5c-f851-411c-bc75-6b260fd43640)
+2026-03-28 19:57:20,574 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:57:20,575 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:20,576 [main] INFO  utilities.MyLogger - Creating truck: International | LT625 | UN-3005-605488
+2026-03-28 19:57:20,985 [main] INFO  utilities.MyLogger - Truck created with ID: 1021c89c-3dbf-408c-82c6-9b2f6acd287b
+2026-03-28 19:57:20,986 [main] INFO  utilities.MyLogger - Verified truck created: International with ID: 1021c89c-3dbf-408c-82c6-9b2f6acd287b
+2026-03-28 19:57:21,314 [main] INFO  utilities.MyLogger - Found created truck in list: International (ID: 1021c89c-3dbf-408c-82c6-9b2f6acd287b)
+2026-03-28 19:57:21,315 [main] INFO  utilities.MyLogger - Create a truck and verify it exists in the system is completed
+2026-03-28 19:57:21,317 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:21,317 [main] INFO  utilities.MyLogger - Creating truck: MackDel | Anthem | UN-4001-995570
+2026-03-28 19:57:21,725 [main] INFO  utilities.MyLogger - Truck created with ID: 8fb02c0b-7a62-47b7-ba70-a3f01d2fd53c
+2026-03-28 19:57:21,726 [main] INFO  utilities.MyLogger - Verified truck created: MackDel with ID: 8fb02c0b-7a62-47b7-ba70-a3f01d2fd53c
+2026-03-28 19:57:21,727 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/8fb02c0b-7a62-47b7-ba70-a3f01d2fd53c
+2026-03-28 19:57:21,965 [main] INFO  utilities.MyLogger - Verified status code: 204
+2026-03-28 19:57:22,363 [main] INFO  utilities.MyLogger - Verified deleted truck 8fb02c0b-7a62-47b7-ba70-a3f01d2fd53c is no longer in the trucks list
+2026-03-28 19:57:22,363 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:57:22,365 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:22,366 [main] INFO  utilities.MyLogger - Creating truck: IntlDel | LT | UN-4002-308362
+2026-03-28 19:57:22,767 [main] INFO  utilities.MyLogger - Truck created with ID: 1ce6ca04-5fe6-4ad3-85f6-e1f0bc10cc46
+2026-03-28 19:57:22,769 [main] INFO  utilities.MyLogger - Verified truck created: IntlDel with ID: 1ce6ca04-5fe6-4ad3-85f6-e1f0bc10cc46
+2026-03-28 19:57:22,770 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/1ce6ca04-5fe6-4ad3-85f6-e1f0bc10cc46
+2026-03-28 19:57:23,009 [main] INFO  utilities.MyLogger - Verified status code: 204
+2026-03-28 19:57:23,376 [main] INFO  utilities.MyLogger - Verified deleted truck 1ce6ca04-5fe6-4ad3-85f6-e1f0bc10cc46 is no longer in the trucks list
+2026-03-28 19:57:23,377 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:57:23,378 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:23,379 [main] INFO  utilities.MyLogger - Creating truck: WesternSt | 5700XE | UN-4003-579898
+2026-03-28 19:57:23,781 [main] INFO  utilities.MyLogger - Truck created with ID: d99257f6-e8ca-4926-9c02-f2ca6e1b97bd
+2026-03-28 19:57:23,782 [main] INFO  utilities.MyLogger - Verified truck created: WesternSt with ID: d99257f6-e8ca-4926-9c02-f2ca6e1b97bd
+2026-03-28 19:57:23,783 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/d99257f6-e8ca-4926-9c02-f2ca6e1b97bd
+2026-03-28 19:57:24,060 [main] INFO  utilities.MyLogger - Verified status code: 204
+2026-03-28 19:57:24,721 [main] INFO  utilities.MyLogger - Verified deleted truck d99257f6-e8ca-4926-9c02-f2ca6e1b97bd is no longer in the trucks list
+2026-03-28 19:57:24,722 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:57:24,723 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:24,724 [main] INFO  utilities.MyLogger - Creating truck: HinoDel | L7 | UN-4004-845246
+2026-03-28 19:57:25,122 [main] INFO  utilities.MyLogger - Truck created with ID: 4233261a-532b-4c26-882d-c47a7054c051
+2026-03-28 19:57:25,123 [main] INFO  utilities.MyLogger - Verified truck created: HinoDel with ID: 4233261a-532b-4c26-882d-c47a7054c051
+2026-03-28 19:57:25,124 [main] INFO  utilities.MyLogger - Deleting truck at: https://nomadtms.up.railway.app/api/trucks/4233261a-532b-4c26-882d-c47a7054c051
+2026-03-28 19:57:25,363 [main] INFO  utilities.MyLogger - Verified status code: 204
+2026-03-28 19:57:25,677 [main] INFO  utilities.MyLogger - Verified deleted truck 4233261a-532b-4c26-882d-c47a7054c051 is no longer in the trucks list
+2026-03-28 19:57:25,678 [main] INFO  utilities.MyLogger - Create a truck then delete it and verify removal is completed
+2026-03-28 19:57:25,681 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:25,682 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/00000000-0000-0000-0000-000000000000
+2026-03-28 19:57:25,945 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:57:25,946 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:57:25,947 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:25,947 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/invalid-id-format-not-uuid
+2026-03-28 19:57:26,086 [main] INFO  utilities.MyLogger - Verified status code 500 is not 200
+2026-03-28 19:57:26,086 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:57:26,087 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:26,087 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/99999999-aaaa-bbbb-cccc-dddddddddddd
+2026-03-28 19:57:26,307 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:57:26,307 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:57:26,310 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:26,310 [main] INFO  utilities.MyLogger - Attempting to delete truck with invalid ID at: https://nomadtms.up.railway.app/api/trucks/aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb
+2026-03-28 19:57:26,524 [main] INFO  utilities.MyLogger - Verified status code 204 is not 200
+2026-03-28 19:57:26,524 [main] INFO  utilities.MyLogger - Delete a truck with non-existent or invalid ID is completed
+2026-03-28 19:57:26,526 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:26,526 [main] INFO  utilities.MyLogger - Creating truck:  | X15 | UN-5001-965575
+2026-03-28 19:57:26,948 [main] INFO  utilities.MyLogger - Truck created with ID: 90a80cdc-e414-49b3-9ed1-2e9152d26763
+2026-03-28 19:57:27,835 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:57:27,921 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:57:27,923 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:27,923 [main] INFO  utilities.MyLogger - Creating truck: Test |  | 
+2026-03-28 19:57:28,340 [main] INFO  utilities.MyLogger - Truck created with ID: 0069a947-186d-4ead-8ab9-68924df55fe1
+2026-03-28 19:57:28,991 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:57:29,072 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:57:29,073 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:29,074 [main] INFO  utilities.MyLogger - Creating truck:  |  | 
+2026-03-28 19:57:29,487 [main] INFO  utilities.MyLogger - Truck created with ID: e3ab31c1-7da1-4d9f-b1d5-39d0ab618e88
+2026-03-28 19:57:30,151 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:57:30,236 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 19:57:30,237 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 19:57:30,237 [main] INFO  utilities.MyLogger - Creating truck: Solo |  | UN-5004-819462
+2026-03-28 19:57:30,636 [main] INFO  utilities.MyLogger - Truck created with ID: 3cbdc8c5-fc68-48dd-8fff-c3d6862bde20
+2026-03-28 19:57:31,311 [main] ERROR utilities.MyLogger - Create a truck with missing or invalid data failed please check reports for screenshot
+2026-03-28 19:57:31,392 [main] INFO  utilities.MyLogger - Create a truck with missing or invalid data is completed
+2026-03-28 20:57:10,244 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 20:57:10,254 [main] INFO  utilities.MyLogger - Creating trailer via API: Great Dane | Dry Van | Unit: APIU-6001
+2026-03-28 20:57:11,535 [main] INFO  utilities.MyLogger - Trailer created via API with ID: 6fbcd266-7430-463a-a720-702c53f6c07d, Unit: APIU-6001
+2026-03-28 20:57:13,027 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-28 20:57:13,228 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-28 20:57:13,601 [main] INFO  utilities.MyLogger - Navigated to Trailers page
+2026-03-28 20:57:16,170 [main] ERROR utilities.MyLogger - Create a trailer via API then validate and delete on UI failed please check reports for screenshot
+2026-03-28 20:57:16,258 [main] INFO  utilities.MyLogger - Create a trailer via API then validate and delete on UI is completed
+2026-03-28 20:57:16,262 [main] INFO  utilities.MyLogger - New Scenario is started
+2026-03-28 20:57:16,263 [main] INFO  utilities.MyLogger - Creating trailer via API: Wabash | Reefer | Unit: APIU-6002
+2026-03-28 20:57:16,780 [main] INFO  utilities.MyLogger - Trailer created via API with ID: d432a9c0-f034-4c79-9982-31d0c224581a, Unit: APIU-6002
+2026-03-28 20:57:17,671 [main] INFO  utilities.MyLogger - User launched the web application
+2026-03-28 20:57:17,868 [main] INFO  utilities.MyLogger - user is logging in using api@gmail.com username
+2026-03-28 20:57:18,208 [main] INFO  utilities.MyLogger - Navigated to Trailers page
+2026-03-28 20:57:20,890 [main] ERROR utilities.MyLogger - Create a trailer via API then validate and delete on UI failed please check reports for screenshot
+2026-03-28 20:57:20,974 [main] INFO  utilities.MyLogger - Create a trailer via API then validate and delete on UI is completed
